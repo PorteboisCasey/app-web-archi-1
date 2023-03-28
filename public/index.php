@@ -11,9 +11,11 @@ $dotenv->load();
 // Couche Controller
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $route) {
     $route->addRoute('GET', '/', 'Quizz\Controller\HomeController');
+    $route->addRoute('GET', '/validation', 'Quizz\Controller\User\ValidationController');
     $route->addRoute('GET', '/lister', 'Quizz\Controller\Questionnaire\ListController');
     $route->addRoute('GET', '/detail/{id:\d+}', 'Quizz\Controller\Questionnaire\ViewController');
 });
 // Dispatcher -> Couche view
 echo FastRouteCore::getDispatcher($dispatcher);
+// Cette commande vient printer le retour de la vue
 
